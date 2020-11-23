@@ -33,6 +33,7 @@ Easy way to create a Jitsi cluster based on Debian Buster
     - [4.2.1 Adding the JMS public key](#421-adding-the-jms-public-key)
     - [4.2.2 Adding the Jibri node to the pool](#422-adding-the-jibri-node-to-the-pool)
 - [5- FAQ](#5-faq)
+- [6- My Mods](#6-my-mods)
 
 ---
 
@@ -402,7 +403,7 @@ the `JMS` host:
 ```bash
 wget -O /usr/local/sbin/add-jibri-node https://raw.githubusercontent.com/emrahcom/emrah-buster-templates/master/machines/eb-jitsi-host/usr/local/sbin/add-jibri-node
 ```
-# My mods
+# 6. My mods
 
 ## Jibri
 Adding Dropbox and S3 upload
@@ -464,7 +465,6 @@ Modify `/etc/jitsi/jibri/jibri.conf`
 ```
 finalize-script = "/usr/local/bin/jitsi_uploader.sh"
 ```
-These files need to be in 
-/var/lib/lxc/eb-jibri-template/rootfs/usr/local/bin
+#### These files need to be in `/var/lib/lxc/eb-jibri-template/rootfs/usr/local/bin`
 
 https://github.com/jpkelly/emrah-buster-templates/tree/master/machines/eb-jibri-template/usr/local/bin
