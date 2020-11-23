@@ -402,3 +402,18 @@ the `JMS` host:
 ```bash
 wget -O /usr/local/sbin/add-jibri-node https://raw.githubusercontent.com/emrahcom/emrah-buster-templates/master/machines/eb-jitsi-host/usr/local/sbin/add-jibri-node
 ```
+# My mods
+
+## Jibri
+```
+apt-get install jq 
+```
+```
+apt install unzip
+unzip awscliv2.zip
+./aws/install      
+```
+Modify `/etc/jitsi/jibri/jibri.conf`
+```
+finalize-script = "/usr/local/bin/jitsi_uploader.sh"
+```
