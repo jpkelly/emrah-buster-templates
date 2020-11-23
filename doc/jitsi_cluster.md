@@ -406,6 +406,10 @@ wget -O /usr/local/sbin/add-jibri-node https://raw.githubusercontent.com/emrahco
 
 ## Jibri
 ```
+apt-get update
+apt-get install rclone
+```
+```
 apt-get install jq 
 ```
 ```
