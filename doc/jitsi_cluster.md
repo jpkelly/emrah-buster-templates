@@ -405,6 +405,48 @@ wget -O /usr/local/sbin/add-jibri-node https://raw.githubusercontent.com/emrahco
 # My mods
 
 ## Jibri
+Adding Dropbox and S3 upload
+
+### Make changes stick
+
+* stop jibri containers
+
+```
+systemctl stop jibri-ephemeral-container.service
+```
+
+* start the template as a container
+
+```
+lxc-start -n eb-jibri-template
+```
+
+* attach the running template
+
+```
+lxc-attach -n eb-jibri-template
+```
+
+* Install what you want
+
+```
+apt-get update
+apt-get install rclone
+```
+
+* stop the template (be carefull, dont stop the host)
+
+```
+poweroff
+```
+
+* start the jibri instances again
+
+```
+systemctl start jibri-ephemeral-container.service
+```
+
+### Changes
 ```
 apt-get update
 apt-get install rclone
@@ -422,3 +464,7 @@ Modify `/etc/jitsi/jibri/jibri.conf`
 ```
 finalize-script = "/usr/local/bin/jitsi_uploader.sh"
 ```
+These files need to be in 
+/var/lib/lxc/eb-jibri-template/rootfs/usr/local/bin
+
+https://github.com/jpkelly/emrah-buster-templates/tree/master/machines/eb-jibri-template/usr/local/bin
